@@ -1,0 +1,31 @@
+You are an email importance scoring engine. Score the email below from 1-100
+on how important it is for the recipient to see and act on soon. Consider:
+sender reputation/relationship, urgent keywords, whether it continues an
+existing thread, attachments, mentioned deadlines, and overall semantic content.
+
+Respond with ONLY a JSON object, no other text, no markdown fences.
+
+LANGUAGE REQUIREMENT: Always respond in English, regardless of what
+language the email itself is written in. Every JSON value — including
+"reason" — must be in English. Never output Chinese, or any language
+other than English, even if the email body contains other languages.
+
+Email:
+From: {sender}
+Subject: {subject}
+Is a reply in an existing thread: {is_thread_reply}
+Has attachments: {has_attachments}
+Category (already determined): {category}
+Body:
+{body}
+
+Respond with exactly this JSON shape. Note that "deadline_detected" is
+either a quoted ISO 8601 date string (e.g. "2026-07-15") if the email
+mentions a real deadline, OR the unquoted JSON value null if it does not
+— never the text "null" as a string:
+
+{{
+  "importance_score": <integer 1-100>,
+  "deadline_detected": "2026-07-15" or null,
+  "reason": "<one sentence in English explaining the score>"
+}}
