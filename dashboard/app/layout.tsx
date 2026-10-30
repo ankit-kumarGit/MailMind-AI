@@ -3,8 +3,8 @@ import "./globals.css";
 import { Sidebar } from "@/components/Sidebar";
 
 export const metadata: Metadata = {
-  title: "SYJ Mail Intelligence AI",
-  description: "Signal console for the SYJ Mail Intelligence AI assistant",
+  title: "MailMind AI",
+  description: "Signal console for the MailMind AI assistant",
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {

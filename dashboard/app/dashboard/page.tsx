@@ -301,7 +301,7 @@ export default function DashboardPage() {
             </h1>
 
             <p className="mt-2 text-sm text-muted">
-              Operational overview of the SYJ Mail Intelligence AI platform.
+              Operational overview of the MailMind AI platform.
             </p>
 
           </div>

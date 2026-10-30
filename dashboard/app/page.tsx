@@ -14,7 +14,7 @@ export default function HomePage() {
     <main className="flex min-h-screen items-center justify-center bg-base">
       <div className="rounded-lg border border-border bg-surface px-8 py-6 shadow-panel">
         <p className="font-display text-lg font-semibold text-text">
-          SYJ Mail Intelligence AI
+          MailMind AI
         </p>
 
         <p className="mt-2 text-sm text-muted">

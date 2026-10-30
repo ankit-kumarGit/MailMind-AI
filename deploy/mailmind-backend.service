@@ -1,15 +1,15 @@
 [Unit]
-Description=SYJ Mail Intelligence AI - backend (poller + API)
+Description=MailMind AI - backend (poller + API)
 After=network-online.target postgresql.service
 Wants=network-online.target
 
 [Service]
 Type=simple
-User=syjmail
-Group=syjmail
-WorkingDirectory=/opt/syj-mail-intelligence-ai
-EnvironmentFile=/opt/syj-mail-intelligence-ai/.env
-ExecStart=/opt/syj-mail-intelligence-ai/.venv/bin/python main.py
+User=mailmind
+Group=mailmind
+WorkingDirectory=/opt/mailmind-ai
+EnvironmentFile=/opt/mailmind-ai/.env
+ExecStart=/opt/mailmind-ai/.venv/bin/python main.py
 Restart=on-failure
 RestartSec=5
 # Auto-restart forever, but back off if it's crash-looping
@@ -20,7 +20,7 @@ StartLimitBurst=10
 NoNewPrivileges=true
 PrivateTmp=true
 ProtectSystem=strict
-ReadWritePaths=/opt/syj-mail-intelligence-ai/data
+ReadWritePaths=/opt/mailmind-ai/data
 
 [Install]
 WantedBy=multi-user.target

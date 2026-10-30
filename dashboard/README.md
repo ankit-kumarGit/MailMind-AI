@@ -1,4 +1,4 @@
-# SYJ Mail Intelligence — Dashboard
+# MailMind AI — Dashboard
 
 Next.js + TypeScript + Tailwind frontend for the backend in `../app/api/main.py`.
 

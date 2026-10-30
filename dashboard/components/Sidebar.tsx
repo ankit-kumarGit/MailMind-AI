@@ -95,7 +95,7 @@ export function Sidebar() {
       <div className="border-b border-border px-6 py-6">
 
         <div className="font-display text-lg font-semibold text-text">
-          SYJ Mail Intelligence AI
+          MailMind AI
         </div>
 
         <div className="mt-1 font-mono text-[11px] uppercase tracking-[0.25em] text-muted">
@@ -287,11 +287,11 @@ export function Sidebar() {
           <div>
 
             <div className="font-display text-sm font-semibold text-text">
-              SAYANJALI NEXUS
+              MAILMIND AI
             </div>
 
             <div className="mt-1 font-mono text-[10px] uppercase tracking-[0.25em] text-muted">
-              SYJ Mail Intelligence AI
+              MailMind AI
             </div>
 
           </div>
@@ -347,7 +347,7 @@ export function Sidebar() {
         </div>
 
         <p className="mt-4 text-center font-mono text-[10px] uppercase tracking-[0.25em] text-muted">
-          © 2026 SAYANJALI NEXUS PRIVATE LIMITED
+          © 2026 MailMind AI · Developed by Ankit Kumar
         </p>
 
       </div>

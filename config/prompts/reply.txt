@@ -51,8 +51,7 @@ CORRECT reply:
 Thanks for flagging this. I'm on it now and starting the recovery process
 right away. I'll update you as soon as service is back up.
 
-Regards,
-Syed"
+Regards"
 
 The correct reply never repeats "production API is unavailable" or
 "investigate immediately" back to the sender — it responds to those words,

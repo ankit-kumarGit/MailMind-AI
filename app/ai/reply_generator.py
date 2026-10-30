@@ -6,6 +6,7 @@ from app.ai.provider import get_provider
 from app.ai.prompts import load_prompt
 from app.ai.style_learner import get_style_profile_text
 from app.core.logger import log_event
+from config.config import settings
 
 
 SAFE_MAX_CONFIDENCE = 98
@@ -40,14 +41,14 @@ intended action in your own words only.
 
 
 def _safe_reply(subject: str) -> dict:
+    sig = settings.email_signature or (f"Regards,\n{settings.user_name}" if settings.user_name else "Regards")
     return {
         "reply_subject": f"Re: {subject}",
         "reply_body": (
             "Thank you for your email.\n\n"
             "I've received your message and I'm reviewing it now. "
             "I'll get back to you shortly with an update.\n\n"
-            "Regards,\n"
-            "Syed"
+            f"{sig}"
         ),
         "confidence": 60,
         "reasoning": "Fallback reply generated because the AI response was incomplete.",

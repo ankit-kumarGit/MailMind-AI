@@ -344,7 +344,7 @@ export default function EmailDetailPage() {
                           <p className="mt-1.5 text-[11px] text-muted">
                             Read-only for now — editing before send needs a
                             small backend addition (a save endpoint for
-                            drafts) so an edit can't silently be dropped in
+                            drafts) so an edit can&apos;t silently be dropped in
                             favor of the original text.
                           </p>
                         </div>

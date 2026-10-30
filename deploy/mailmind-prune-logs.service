@@ -1,0 +1,10 @@
+[Unit]
+Description=Prune old MailMind AI log entries
+
+[Service]
+Type=oneshot
+User=mailmind
+Group=mailmind
+WorkingDirectory=/opt/mailmind-ai
+EnvironmentFile=/opt/mailmind-ai/.env
+ExecStart=/opt/mailmind-ai/.venv/bin/python -m scripts.prune_logs --days 30

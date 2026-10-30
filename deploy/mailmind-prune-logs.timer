@@ -1,5 +1,5 @@
 [Unit]
-Description=Prune old SYJ Mail Intelligence log entries (weekly)
+Description=Prune old MailMind AI log entries (weekly)
 
 [Timer]
 OnCalendar=weekly

@@ -21,7 +21,11 @@ class Settings:
     environment: str = os.getenv("ENVIRONMENT", "development")
 
     # Database
-    database_url: str = os.getenv("DATABASE_URL", "sqlite:///./data/syj_mail.db")
+    database_url: str = os.getenv("DATABASE_URL", "sqlite:///./data/mailmind.db")
+
+    # User Identity & Signature
+    user_name: str = os.getenv("USER_NAME", "")
+    email_signature: str = os.getenv("EMAIL_SIGNATURE", "")
 
     # LLM
     llm_provider: str = os.getenv("LLM_PROVIDER", "ollama")

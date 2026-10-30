@@ -43,7 +43,7 @@ async def lifespan(app: FastAPI):
     await shutdown_provider()
 
 
-app = FastAPI(title="SYJ Mail Intelligence AI", lifespan=lifespan)
+app = FastAPI(title="MailMind AI", lifespan=lifespan)
 app.state.limiter = limiter
 app.add_exception_handler(RateLimitExceeded, _rate_limit_exceeded_handler)
 

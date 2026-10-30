@@ -13,8 +13,8 @@ sudo usermod -aG docker $USER   # log out/in after this
 ## 2. Clone and configure
 
 ```bash
-git clone https://github.com/SHalimoosavi/syj-mail-intelligence-ai.git
-cd syj-mail-intelligence-ai
+git clone https://github.com/ankitkumar/mailmind-ai.git
+cd mailmind-ai
 cp .env.example .env
 ```
 
@@ -51,8 +51,8 @@ HTTPS, get an initial certificate:
 # so certbot's HTTP challenge can be reached, then:
 docker compose up -d nginx
 docker run --rm \
-  -v syj-mail-intelligence_certbot_www:/var/www/certbot \
-  -v syj-mail-intelligence_certbot_conf:/etc/letsencrypt \
+  -v mailmind_certbot_www:/var/www/certbot \
+  -v mailmind_certbot_conf:/etc/letsencrypt \
   certbot/certbot certonly --webroot -w /var/www/certbot \
   -d mail.yourdomain.com --email you@yourdomain.com --agree-tos --no-eff-email
 # Uncomment the redirect line back in deploy/nginx.conf afterward.
@@ -61,8 +61,8 @@ docker run --rm \
 Renewal (add as a monthly cron job on the host):
 ```bash
 docker run --rm \
-  -v syj-mail-intelligence_certbot_www:/var/www/certbot \
-  -v syj-mail-intelligence_certbot_conf:/etc/letsencrypt \
+  -v mailmind_certbot_www:/var/www/certbot \
+  -v mailmind_certbot_conf:/etc/letsencrypt \
   certbot/certbot renew --webroot -w /var/www/certbot
 docker compose exec nginx nginx -s reload
 ```

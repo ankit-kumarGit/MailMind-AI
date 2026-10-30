@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { Suspense, useEffect, useState } from "react";
 import { useRouter, useSearchParams } from "next/navigation";
 import {
   Lock,
@@ -9,7 +9,7 @@ import {
   AlertTriangle,
 } from "lucide-react";
 
-export default function LoginPage() {
+function LoginForm() {
   const router = useRouter();
   const searchParams = useSearchParams();
 
@@ -82,7 +82,7 @@ export default function LoginPage() {
           </div>
 
           <h1 className="mt-5 text-center font-display text-2xl font-bold text-text">
-            SYJ Mail Intelligence AI
+            MailMind AI
           </h1>
 
           <p className="mt-2 text-center text-sm text-muted">
@@ -269,11 +269,11 @@ export default function LoginPage() {
             <div>
 
               <p className="font-display text-sm font-semibold text-text">
-                SAYANJALI NEXUS
+                MAILMIND AI
               </p>
 
               <p className="mt-1 font-mono text-[10px] uppercase tracking-[0.25em] text-muted">
-                SYJ Mail Intelligence AI
+                MailMind AI
               </p>
 
             </div>
@@ -329,11 +329,11 @@ export default function LoginPage() {
             <div>
 
               <p className="font-mono uppercase tracking-wide">
-                Version
+                Developer
               </p>
 
               <p className="mt-1 text-text">
-                Production Build
+                Ankit Kumar
               </p>
 
             </div>
@@ -341,7 +341,7 @@ export default function LoginPage() {
           </div>
 
           <p className="mt-6 text-center font-mono text-[10px] uppercase tracking-[0.25em] text-muted">
-            © 2026 SAYANJALI NEXUS PRIVATE LIMITED
+            © 2026 MailMind AI · Developed by Ankit Kumar
           </p>
 
         </div>
@@ -351,5 +351,16 @@ export default function LoginPage() {
     </main>
 
   );
+}
 
+export default function LoginPage() {
+  return (
+    <Suspense fallback={
+      <main className="flex min-h-screen items-center justify-center bg-base px-6">
+        <div className="text-muted text-sm font-mono">Loading authentication...</div>
+      </main>
+    }>
+      <LoginForm />
+    </Suspense>
+  );
 }

@@ -1,7 +1,7 @@
 #!/data/data/com.termux/files/usr/bin/bash
 set -e
 
-echo "== SYJ Mail Intelligence AI - Termux setup =="
+echo "== MailMind AI - Termux setup =="
 
 pkg install -y python git build-essential libffi openssl clang
 

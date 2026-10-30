@@ -1,17 +1,17 @@
-name: syj-mail-intelligence
+name: mailmind-ai
 
 services:
   postgres:
     image: postgres:16-alpine
     restart: unless-stopped
     environment:
-      POSTGRES_USER: syj
+      POSTGRES_USER: mailmind
       POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:?set POSTGRES_PASSWORD in .env}
-      POSTGRES_DB: syj_mail
+      POSTGRES_DB: mailmind
     volumes:
       - postgres_data:/var/lib/postgresql/data
     healthcheck:
-      test: ["CMD-SHELL", "pg_isready -U syj -d syj_mail"]
+      test: ["CMD-SHELL", "pg_isready -U mailmind -d mailmind"]
       interval: 10s
       timeout: 5s
       retries: 5
@@ -30,7 +30,7 @@ services:
         condition: service_healthy
     environment:
       ENVIRONMENT: production
-      DATABASE_URL: postgresql://syj:${POSTGRES_PASSWORD}@postgres:5432/syj_mail
+      DATABASE_URL: postgresql://mailmind:${POSTGRES_PASSWORD}@postgres:5432/mailmind
       API_KEY: ${API_KEY:?set API_KEY in .env}
       CORS_ALLOW_ORIGINS: ${CORS_ALLOW_ORIGINS:-http://localhost:3000}
       LLM_PROVIDER: ${LLM_PROVIDER:-ollama}

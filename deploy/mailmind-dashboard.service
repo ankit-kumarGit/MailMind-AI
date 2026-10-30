@@ -1,0 +1,21 @@
+[Unit]
+Description=MailMind AI - dashboard (Next.js)
+After=network-online.target mailmind-backend.service
+Wants=network-online.target
+
+[Service]
+Type=simple
+User=mailmind
+Group=mailmind
+WorkingDirectory=/opt/mailmind-ai/dashboard
+EnvironmentFile=/opt/mailmind-ai/dashboard/.env.local
+ExecStart=/usr/bin/npm run start
+Restart=on-failure
+RestartSec=5
+
+NoNewPrivileges=true
+PrivateTmp=true
+ProtectSystem=strict
+
+[Install]
+WantedBy=multi-user.target

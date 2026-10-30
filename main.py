@@ -28,7 +28,7 @@ def run_api():
 
 async def main():
     init_db()
-    log_event("main", "SYJ Mail Intelligence AI starting up")
+    log_event("main", "MailMind AI starting up")
 
     api_thread = threading.Thread(target=run_api, daemon=True)
     api_thread.start()

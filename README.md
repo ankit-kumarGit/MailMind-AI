@@ -1,10 +1,10 @@
 <div align="center">
 
-<img src="./assets/header-typing.svg" alt="SYJ Mail Intelligence AI" width="900"/>
+<img src="./assets/header-typing.svg" alt="MailMind AI" width="900"/>
 
-# 📬 SYJ Mail Intelligence AI
+# 📬 MailMind AI
 
-### Autonomous AI Email Assistant for Gmail — Model-Agnostic · Self-Hosted · Production-Hardened
+### MailMind AI – Intelligent Email Automation Platform
 
 **Your inbox, triaged and drafted by AI that runs entirely on your own hardware — no OpenAI, no vendor lock-in, no API bill.**
 
@@ -13,10 +13,9 @@
 [![Phase 3](https://img.shields.io/badge/Phase%203-Production%20Hardened-brightgreen?style=flat-square)](#-where-this-stands)
 [![Phase 3.1](https://img.shields.io/badge/Phase%203.1-Reliability%20Pass-brightgreen?style=flat-square)](#-where-this-stands)
 [![Tests](https://img.shields.io/badge/tests-19%20passing-2EA44F?style=flat-square)](#-testing)
-[![License](https://img.shields.io/badge/license-MIT-blue?style=flat-square)](#-license)
 [![Platform](https://img.shields.io/badge/platforms-Windows%20%7C%20Linux%20%7C%20macOS%20%7C%20Termux-7C3AED?style=flat-square)](#-quick-start)
 
-[Features](#-what-this-is) • [Architecture](#️-architecture) • [Quick Start](#-quick-start) • [Production Guide](#️-making-it-production-ready) • [Security](#-security) • [Author](#-behind-the-code)
+[Features](#-key-features) • [Architecture](#️-architecture) • [Quick Start](#-quick-start) • [Production Guide](#️-making-it-production-ready) • [Security](#-security) • [Developer](#-project-developer)
 
 </div>
 
@@ -24,7 +23,7 @@
 
 ## 📖 What This Is
 
-SYJ Mail Intelligence AI watches your Gmail inbox, **classifies** every message, **scores it for importance**, **summarizes** it, and **drafts a reply in your own writing style** — then auto-sends it only above a confidence threshold *you* control. Everything else waits for your one-tap approval.
+MailMind AI watches your Gmail inbox, **classifies** every message, **scores it for importance**, **summarizes** it, and **drafts a reply in your own writing style** — then auto-sends it only above a confidence threshold *you* control. Everything else waits for your one-tap approval.
 
 It's **model-agnostic by design** — there's no OpenAI dependency anywhere in the stack. It runs entirely against local, open-weight models through [Ollama](https://ollama.com) (DeepSeek V3/R1, Qwen 3, Qwen Coder, Mistral, Llama 3), and swapping providers is a config change, not a code change.
 
@@ -34,7 +33,7 @@ This isn't a weekend script — it's shipped through four real phases (core pipe
 <img src="./assets/stat-cards.svg" alt="Project stats" width="880"/>
 </div>
 
-> 🎬 **Demo:** drop a short screen recording at `assets/demo.gif` (1280×720, <10s, showing an email arriving → getting classified → a reply drafted) and reference it here as `![SYJ Mail Intelligence AI demo](./assets/demo.gif)`. Skipped in this README rather than linking a placeholder that doesn't exist yet.
+> 🎬 **Demo:** drop a short screen recording at `assets/demo.gif` (1280×720, <10s, showing an email arriving → getting classified → a reply drafted) and reference it here as `![MailMind AI demo](./assets/demo.gif)`. Skipped in this README rather than linking a placeholder that doesn't exist yet.
 
 ---
 
@@ -182,8 +181,8 @@ The API key **never reaches client-side JavaScript** — see [Security](#-securi
 **1. Clone and set up the backend**
 
 ```bash
-git clone https://github.com/SHalimoosavi/syj-mail-intelligence-ai.git
-cd syj-mail-intelligence-ai
+git clone https://github.com/ankitkumar/mailmind-ai.git
+cd mailmind-ai
 python3 -m venv .venv && source .venv/bin/activate
 pip install -r requirements.txt
 cp .env.example .env
@@ -355,44 +354,22 @@ Enforced in plain Python (`app/workflows/pipeline.py::_handle_reply_confidence`)
 
 ---
 
-## 👤 Behind the Code
+## 👤 Project Developer
 
 <div align="center">
 
-### Syed Ali Hasan Moosavi
-**Founder & Managing Director — Sayanjali Nexus Private Limited**
-
-[![GitHub](https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/SHalimoosavi)
-[![Portfolio](https://img.shields.io/badge/Portfolio-000000?style=for-the-badge&logo=vercel&logoColor=white)](https://shalimoosavi.github.io/moosavi/)
-[![X](https://img.shields.io/badge/X-000000?style=for-the-badge&logo=x&logoColor=white)](https://x.com/SHAliMoosavi)
+### Ankit Kumar
+**Developer & Lead Engineer**
 
 </div>
 
-A solo, full-stack technical founder building across AI/SaaS, cybersecurity, blockchain, and business automation — end to end, from backend architecture to deployment to the docs you're reading right now. Core stack: **Python, FastAPI, Next.js, React, TypeScript, PostgreSQL, Docker.**
-
-This project reflects a broader building philosophy: no phase is marked "done" until it's been run against real infrastructure — a live Postgres instance, a live Docker-equivalent stack, an actual `main.py` run with credentials deliberately removed. If this README says something is tested, it's because it was tested.
+MailMind AI is engineered for production-grade, local-first email automation with zero cloud inference dependency.
 
 ---
 
-## 🧰 Other Tools & Projects by SYJ
+## 📄 License & Attribution
 
-| Project | What It Is |
-|---|---|
-| **[SYJ GST Invoice Reconciliation](https://github.com/SHalimoosavi/SYJ-GST-Reconciliation)** | Production-ready GST invoice reconciliation engine — duplicate detection, GSTIN matching, multi-sheet Excel reporting. 137 tests, ~90% coverage. |
-| **SYJ NexusIntel AI** | Multi-tenant enterprise SaaS — CRM, revenue intelligence, RBAC, subscriptions, audit logging. |
-| **SYJ Media Tools** | Social media downloader — GitHub Pages frontend, FastAPI + yt-dlp backend. |
-| **Sayanjali OSINT — Sentinel Intelligence** | Threat intelligence aggregation from VirusTotal, Shodan, AbuseIPDB, AlienVault OTX. |
-| **NexusRank AI** | AI-powered SEO/GEO SaaS — async FastAPI backend, multi-provider AI integration, Stripe billing. |
-| **Real Estate CRM SaaS** | Multi-tenant AI-powered CRM with WhatsApp automation. |
-| **SYJ MOMENTUM** | Unified B2B automation — WhatsApp, LinkedIn outreach, review monitoring, GST compliance. |
-
-Full, up-to-date list: [github.com/SHalimoosavi?tab=repositories](https://github.com/SHalimoosavi?tab=repositories)
-
----
-
-## 📄 License
-
-MIT License — see [`LICENSE`](./LICENSE).
+Copyright (c) 2026 Ankit Kumar. All rights reserved.
 
 <div align="center">
 
